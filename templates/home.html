@@ -1,3 +1,127 @@
-<h1>
-Hello World
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>MIDFILEDER PROFILING TOOL</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="login">
+        <div class="belt"></div>
+        <div class="centered-text">
+            <h1> MIDFIELDER PROFILING TOOL</h1>
+       
+        <!-- Input Player Data-->
+        <form action="{{url_for('predict')}}"method="post">
+            <input type="text" name="Goals" placeholder="Goals" required="required">
+            <input type="text" name="Shots" placeholder="Shots" required="required">
+            <input type="text" name="SoT" placeholder="Shots On Target" required="required">
+            <input type="text" name="SoT%" placeholder="Percentage of Shots On Target" required="required">
+            <input type="text" name="G/Sh" placeholder="Goals Per Shot" required="required">
+            <input type="text" name="G/SoT" placeholder="Goals Per Shot On Target" required="required">
+            <input type="text" name="ShoDist" placeholder="Shooting Distance" required="required">
+            <input type="text" name="PasTotCmp" placeholder="Total Passes Completed" required="required">
+            <input type="text" name="PasTotAtt" placeholder="Total Passes Attempted" required="required">
+            <input type="text" name="PasTotCmp%" placeholder="Pass Completion Rate(Percentage)" required="required">
+            <input type="text" name="PasTotDist" placeholder="Total Pass Distance" required="required">
+            <input type="text" name="PasTotPrgDist" placeholder="Total Progressive Passes Distance" required="required">
+            <input type="text" name="PasShoCmp" placeholder="Short Passes Completed" required="required">
+            <input type="text" name="PasShoAtt" placeholder="Short Passes Attempted" required="required">
+            <input type="text" name="PasShoCmp%" placeholder="Short Pass Completion Rate(%)" required="required">
+            <input type="text" name="PasMedCmp" placeholder="Medium Passes Completed" required="required">
+            <input type="text" name="PasMedAtt" placeholder="Medium Passes Attempted" required="required">
+            <input type="text" name="PasMedCmp%" placeholder="Medium Pass Completion Rate(%)" required="required">
+            <input type="text" name="PasLonCmp" placeholder="Long Passes Completed" required="required">
+            <input type="text" name="PasLonAtt" placeholder="Long Passes Attempted" required="required">
+            <input type="text" name="PasLonCmp%" placeholder="Long Passes Completion(%)" required="required">
+            <input type="text" name="Assists" placeholder="Assists" required="required">
+            <input type="text" name="PasAss" placeholder="Key Passes" required="required">
+            <input type="text" name="Pas3rd" placeholder="Passes Into Final Third" required="required">
+            <input type="text" name="PPA" placeholder="Passes Into Penalty Area" required="required">
+            <input type="text" name="CrsPA" placeholder="Crosses Into Penalty Area" required="required">
+            <input type="text" name="PasProg" placeholder="Progressive Passes" required="required">
+            <input type="text" name="PasAtt" placeholder="Passes Attempted" required="required">
+            <input type="text" name="PasLive" placeholder="Live Ball Passes" required="required">
+            <input type="text" name="PasDead" placeholder="Dead Ball Passes" required="required">
+            <input type="text" name="PasFK" placeholder="Free Kick Passes" required="required">
+            <input type="text" name="Sw" placeholder="Switches(Travelling More Than 40 Yards Across the Pitch)" required="required">
+            <input type="text" name="PasCrs" placeholder="Crosses" required="required">
+            <input type="text" name="PasCmp" placeholder="Passes Completed" required="required">
+            <input type="text" name="PasOff" placeholder="Passes Offside" required="required">
+            <input type="text" name="PasBlocks" placeholder="Passes blocked by An Opponent" required="required">
+            <input type="text" name="SCA" placeholder="Shot Creating Actions" required="required">
+            <input type="text" name="ScaPassLive" placeholder="Shot Creating Actions(Live Passes)" required="required">
+            <input type="text" name="ScaPassDead" placeholder="Shot Creating Actions(Dead Passes)" required="required">
+            <input type="text" name="ScaDrib" placeholder="Take-Ons That Lead To A Shot(TO)" required="required">
+            <input type="text" name="ScaSh" placeholder="Shots That Lead To Another Shot(ScaSh)" required="required">
+            <input type="text" name="ScaFld" placeholder="Fouls Drawn That Lead To A Shot Attempt" required="required">
+            <input type="text" name="ScaDef" placeholder="Defensive Actions That Lead To A Shot Attempt" required="required">
+            <input type="text" name="GCA" placeholder="Goal Creating Actions" required="required">
+            <input type="text" name="GcaPassLive" placeholder="GcaPassLive" required="required">
+            <input type="text" name="GcaPassDead" placeholder="GcaPassDead" required="required">
+            <input type="text" name="GcaDrib" placeholder="GcaDrib" required="required">
+            <input type="text" name="GcaSh" placeholder="GcaSh" required="required">
+            <input type="text" name="GcaFld" placeholder="GcaFld" required="required">
+            <input type="text" name="GcaDef" placeholder="GcaDef" required="required">
+            <input type="text" name="Tkl" placeholder="Tackles" required="required">
+            <input type="text" name="TklWon" placeholder="Tackles Won" required="required">
+            <input type="text" name="TklDef3rd" placeholder="Tackles In Defensive Third" required="required">
+            <input type="text" name="TklMid3rd" placeholder="Tackles In Middle Third" required="required">
+            <input type="text" name="TklAtt3rd" placeholder="Tackles In Attacking Third" required="required">
+            <input type="text" name="TklDri" placeholder="Dribblers Tackled" required="required">
+            <input type="text" name="TklDriAtt" placeholder="Number of Unsuccesfull Challenges Plus number of Dribblers Tackled" required="required">
+            <input type="text" name="TklDri%" placeholder="Percenntage of Dribblers Tackled" required="required">
+            <input type="text" name="TklDriPast" placeholder="Number of Unsuccessfull Attempts to Challenge a Dribbling Player" required="required">
+            <input type="text" name="Blocks" placeholder="Blocks" required="required">
+            <input type="text" name="BlkSh" placeholder="Shots Blocked" required="required">
+            <input type="text" name="BlkPass" placeholder="Passes Blocked" required="required">
+            <input type="text" name="Int" placeholder="Interceptions" required="required">
+            <input type="text" name="Tkl+Int" placeholder="Tkl+Int" required="required">
+            <input type="text" name="Clr" placeholder="Clearances" required="required">
+            <input type="text" name="Touches" placeholder="Touches" required="required">
+            <input type="text" name="TouDefPen" placeholder="Touches in Defensive Penalty Area" required="required">
+            <input type="text" name="TouDef3rd" placeholder="Touches in Defensive Third" required="required">
+            <input type="text" name="TouMid3rd" placeholder="Touches In Middle Third" required="required">
+            <input type="text" name="TouAtt3rd" placeholder="Touches In Attcking Third" required="required">
+            <input type="text" name="TouAttPen" placeholder="Touches In Attcking Penalty Area" required="required">
+            <input type="text" name="TouLive" placeholder="Live-Ball Touches" required="required">
+            <input type="text" name="Carries" placeholder="Carries" required="required">
+            <input type="text" name="CarTotDist" placeholder="Total Carrying Distance" required="required">
+            <input type="text" name="CarPrgDist" placeholder="Progressive Carrying Distance" required="required">
+            <input type="text" name="CarProg" placeholder="Progressive Carries" required="required">
+            <input type="text" name="Car3rd" placeholder="Carries Into Final Third" required="required">
+            <input type="text" name="CPA" placeholder="Carries Into Penalty Area" required="required">
+            <input type="text" name="CarMis" placeholder="Carry Miscontrols" required="required">
+            <input type="text" name="CarDis" placeholder="Carry Disposessed" required="required">
+            <input type="text" name="Rec" placeholder="Succesfull Passes Received" required="required">
+            <input type="text" name="RecProg" placeholder="Progressive Passes Received" required="required">
+            <input type="text" name="CrdY" placeholder="Yellow Cards" required="required">
+            <input type="text" name="Fls" placeholder="Fouls Committed" required="required">
+            <input type="text" name="Fld" placeholder="Fouls Drawn" required="required">
+            <input type="text" name="Off" placeholder="Offsides" required="required">
+            <input type="text" name="Crs" placeholder="Crosses" required="required">
+            <input type="text" name="TklW" placeholder="Tackles Won" required="required">
+            <input type="text" name="PKwon" placeholder="Penalty Kicks Won" required="required">
+            <input type="text" name="PKcon" placeholder="Penalty Kicks Conceded" required="required">
+            <input type="text" name="Recov" placeholder="Ball Recoveries" required="required">
+            <input type="text" name="AerWon" placeholder="Aerials Won" required="required">
+            <input type="text" name="AerLost" placeholder="Aerials Lost" required="required">
+            <input type="text" name="AerWon%" placeholder="Aerial Success Rate(% won)" required="required">
+          
+
+
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+        </form>
+
+       <br>
+       <br>
+    </div>
+    {{prediction_text}}
+</body>
